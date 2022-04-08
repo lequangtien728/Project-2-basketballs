@@ -2,7 +2,8 @@
 Trello and Routing:
 https://trello.com/b/p6UuDdhf/restaurants
 
-reviewsCtrl.delete![image](https://user-images.githubusercontent.com/100500958/162543498-ba8b8532-8933-43dd-8d8f-23b1819b1711.png)
+![Screen Shot 2022-04-08 at 6 45 58 PM](https://user-images.githubusercontent.com/100500958/162543571-4dd6bce3-031e-4a48-ab92-126cb26da837.png)
+
 
 
 WireFrame:
