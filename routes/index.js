@@ -1,4 +1,5 @@
 var router = require('express').Router();
+const { response } = require('express');
 const passport = require('passport');
 
 // The root route renders our only view
@@ -7,6 +8,9 @@ router.get('/', function(req, res) {
   // in the student demo this was res.redirect('/students'), what do you want?
   // This could be a landing page, or just redirect to your main resource page which you'll have an a tag that makes 
   // a request to `/auth/google` route below
+  res.render('index',{
+    title:'Restaurants'
+  })
 });
 
 // Google OAuth login route

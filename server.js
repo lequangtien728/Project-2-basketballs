@@ -1,3 +1,5 @@
+// load the env consts
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -6,9 +8,15 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const indexRoutes = require('./routes/index');
-// load the env consts
-require('dotenv').config();
+
+
+// console.log(process.env.GOOGLE_CLIENT_ID);
+// console.log(process.env.GOOGLE_SECRET);
+// console.log(process.env.GOOGLE_CALLBACK);
+
+
+const indexRouter = require('./routes/index');
+const restaurantsRouter = require('./routes/restaurants');
 
 // create the Express app
 const app = express();
@@ -49,7 +57,12 @@ app.use(function (req, res, next) {
 });
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
+app.use('/', indexRouter);
+app.use('/restaurants', restaurantsRouter)
+
+app.get('/', (req,res) => {
+  res.redirect('/restaurants')
+})
 
 
 // invalid request, send 404 page

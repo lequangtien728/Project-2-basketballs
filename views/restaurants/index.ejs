@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<h1>Restaurant List</h1>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Restaurant Name</th>
+      <th>Location</th>
+      <th>Open</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+      <% restaurants.forEach(m => { %>
+              <tr>
+                  <td><%= m.restaurantName %></td>
+                  <td><%= m.location %></td>
+                  <td><%= m.openHour %></td>
+                  <td><a href="/restaurants/<%= m._id %>">DETAILS</a></td>
+              </tr>
+              <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
