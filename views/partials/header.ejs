@@ -9,13 +9,15 @@
 </head>
 <body>
   <nav>
-    <a href="/restaurants/new" <%- title === 'Add Restaurant' ? 'class="active"' : '' %>>ADD RESTAURANT</a>
+    <img src="/images/Restaurant.png">
     <a href="/restaurants" <%- title === 'All Restaurants' ? 'class="active"' : '' %>>ALL RESTAURANTS</a>
-    
     <% if (user) { %>
+      
+      <a href="/restaurants/new" <%- title === 'Add Restaurant' ? 'class="active"' : '' %>>ADD RESTAURANT</a>
+
       <a href="/logout">LOG OUT</a>
     <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;</a>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="/images/tien le.jpeg"></a>
     <% } %>
   </nav>
   <main>
