@@ -6,6 +6,8 @@ module.exports = {
     new: newRestaurant,
     create,
     show,
+    edit,
+    update,
   };
   
 
@@ -44,4 +46,16 @@ function show (req,res){
       Restaurant.findById(req.params.id, function(err, restaurant){
           res.render("restaurants/show", {title: "Restaurant Detail", restaurant: restaurant})
       });
+}
+function edit (req,res){
+  Restaurant.findById(req.params.id, function(err,restaurant){
+    res.render('restaurants/edit',{title: "Restaurant Edit", restaurant})
+  })
+}
+async function update (req,res){
+  console.log(req.body)
+  const updated = await Restaurant.findByIdAndUpdate(req.params.id,req.body,{new:true});
+  console.log(updated)
+  res.redirect(`/restaurants/${req.params.id}`)
+
 }
