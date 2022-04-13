@@ -13,19 +13,13 @@ const reviewSchema = new Schema({
   timestamps: true
 });
 
-const courseSchema = new Schema({
-  courseName:{type: String},
-  price:{type: Number},
-  recipes:{type:String},
-})
-
 
 const restaurantSchema = new Schema({
   restaurantName: {type: String,required: true},
   location: {type: String,},
   openHour: {type: String,},
-  // courses: [courseSchema],
   reviews: [reviewSchema], //One restaurant has many reviews
+  courses: [{type: Schema.Types.ObjectId, ref: "Course"}]
 });
 
 

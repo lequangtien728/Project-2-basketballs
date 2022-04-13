@@ -9,7 +9,24 @@
   <div>Open: <%= restaurant.openHour %></div>
 </section>
 <br>
+
+<a href="/courses/<%= restaurant._id %> ">Add Course Infor</a>
+
+<div>Main Course Information:</div>
+<% restaurant.courses.forEach(c => { %>
+  <div>Course Name:<%= c.courseName %></div> 
+  <div>Price:<%= c.price %></div> 
+  <div>Recipes:<%= c.recipes %></div> 
+  <% }); %>
+
+
 <br>
+<br>
+<br>
+<br>
+
+
+
 <form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
   <label>Review:</label>
   <textarea name="content"></textarea>

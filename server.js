@@ -18,6 +18,7 @@ const methodOverride = require('method-override');
 const indexRouter = require('./routes/index');
 const restaurantsRouter = require('./routes/restaurants');
 const reviewsRouter = require('./routes/reviews')
+const coursesRouter = require('./routes/courses')
 
 // create the Express app
 const app = express();
@@ -61,6 +62,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/restaurants', restaurantsRouter)
 app.use('/', reviewsRouter);
+app.use('/', coursesRouter);
 
 app.get('/', (req,res) => {
   res.redirect('/restaurants')

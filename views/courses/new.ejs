@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+
+<form id="add-courses-form" action="/courses/<%=restaurantId%>"method="POST">
+
+  <label>Course:</label>
+  <input type="string" name="courseName">
+  <label>Price:</label>
+  <input type="number" name="price">
+  <label>Recipes:</label>
+  <input type="string" name="recipes">
+  
+
+  <input type="submit" value="Add Course">
+</form>
+
+<%- include('../partials/footer') %>

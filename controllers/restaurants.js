@@ -1,3 +1,5 @@
+const Course = require("../models/course");
+const { populate } = require("../models/restaurant");
 const Restaurant = require("../models/restaurant");
 
 
@@ -43,9 +45,18 @@ function create(req, res) {
       });
 }
 function show (req,res){
-      Restaurant.findById(req.params.id, function(err, restaurant){
-          res.render("restaurants/show", {title: "Restaurant Detail", restaurant: restaurant})
-      });
+      Restaurant.findById(req.params.id)
+        .populate('courses')
+        .exec(function(err,restaurant){
+
+        
+
+        console.log(restaurant)
+        
+          res.render("restaurants/show", {title: "Restaurant Detail", restaurant: restaurant,})
+        // })
+      // });
+        })
 }
 function edit (req,res){
   Restaurant.findById(req.params.id, function(err,restaurant){
