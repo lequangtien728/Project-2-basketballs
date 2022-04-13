@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
 
-<form id="new-form" action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
+<form id="new-form" action="/restaurants/<%= restaurantDoc2._id %>?_method=PUT" method="POST">
   <label>Name:</label>
-  <input type="text" name="restaurantName" value="<%= restaurant.restaurantName %> ">
+  <input type="text" name="restaurantName" value="<%= restaurantDoc2.restaurantName %> ">
   <label>Location:</label>
-  <input type="text" name="location" value="<%= restaurant.location %>">
+  <input type="text" name="location" value="<%= restaurantDoc2.location %>">
   <label>Open Hours:</label>
-  <input type="text" name="openHour"value="<%= restaurant.openHour %>">
+  <input type="text" name="openHour"value="<%= restaurantDoc2.openHour %>">
   
 
 

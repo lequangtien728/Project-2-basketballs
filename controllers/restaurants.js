@@ -15,9 +15,9 @@ module.exports = {
 
 function index(req, res) {
     // console.log(req.user, '< - req.user')
-    Restaurant.find({}, function (err, restaurants) {
+    Restaurant.find({}, function (err, restaurantDoc) {
         res.render("restaurants/index", {//<- this refers to the view folder, to find the page we want to send back to the client
-          restaurants,
+          restaurantDoc:restaurantDoc,
           title: "All Restaurants",
         });
     });
@@ -45,9 +45,9 @@ function create(req, res) {
 function show (req,res){
       Restaurant.findById(req.params.id)
         .populate('courses')
-        .exec(function(err,restaurant){
+        .exec(function(err,restaurantDoc1){
         // console.log(restaurant)
-          res.render("restaurants/show", {title: "Restaurant Detail", restaurant: restaurant,})
+          res.render("restaurants/show", {title: "Restaurant Detail", restaurantDoc1: restaurantDoc1,})
         // })
       // });
         })
@@ -55,8 +55,8 @@ function show (req,res){
 
 //create the edit function to Restaurant information.
 function edit (req,res){
-  Restaurant.findById(req.params.id, function(err,restaurant){
-    res.render('restaurants/edit',{title: "Restaurant Edit", restaurant})
+  Restaurant.findById(req.params.id, function(err,restaurantDoc2){
+    res.render('restaurants/edit',{title: "Restaurant Edit", restaurantDoc2})
   })
 }
 //update new Restaurant information in database.

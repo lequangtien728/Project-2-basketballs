@@ -2,23 +2,28 @@
 
 
 <section id="show-page">
-  <div>Name: <%= restaurant.restaurantName %></div>
+  <div>Name: <%= restaurantDoc1.restaurantName %></div>
   <br>
-  <div>Location: <%= restaurant.location %></div>
+  <div>Location: <%= restaurantDoc1.location %></div>
   <br>
-  <div>Open: <%= restaurant.openHour %></div>
+  <div>Open: <%= restaurantDoc1.openHour %></div>
 </section>
 <br>
 
-<a href="/courses/<%= restaurant._id %> ">Add Course Infor</a>
-
+<a href="/courses/<%= restaurantDoc1._id %> ">Add Course Infor</a>
 <div>Main Course Information:</div>
-<% restaurant.courses.forEach(c => { %>
+<br>
+<section>
+<% restaurantDoc1.courses.forEach(c => { %>
   <div>Course Name:<%= c.courseName %></div> 
   <div>Price:<%= c.price %></div> 
   <div>Recipes:<%= c.recipes %></div> 
+  <br>
   <% }); %>
 
+</section>
+
+
 
 <br>
 <br>
@@ -27,7 +32,7 @@
 
 
 
-<form id="add-review-form" method="POST" action="/restaurants/<%= restaurant._id %>/reviews">
+<form id="add-review-form" method="POST" action="/restaurants/<%= restaurantDoc1._id %>/reviews">
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Rating:</label>
@@ -51,7 +56,7 @@
     </tr>
   </thead>
   <tbody>
-      <% restaurant.reviews.forEach(function(r) { %>
+      <% restaurantDoc1.reviews.forEach(function(r) { %>
           <tr>
             <td>
               <%= r.createdAt.toLocaleDateString() %>
