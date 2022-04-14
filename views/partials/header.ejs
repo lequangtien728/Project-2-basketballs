@@ -12,10 +12,10 @@
   <nav>
     <img src="/images/Restaurant.png">
     <a href="/restaurants" <%- title === 'All Restaurants' ? 'class="active"' : '' %>>ALL RESTAURANTS</a>
-    <a href="/restaurants/new" <%- title === 'Add Restaurant' ? 'class="active"' : '' %>>ADD RESTAURANT</a>
+    
     <% if (user) { %>
       
-      
+      <a href="/restaurants/new" <%- title === 'Add Restaurant' ? 'class="active"' : '' %>>ADD RESTAURANT</a>
 
       <a href="/logout">LOG OUT</a>
     <% } else { %>

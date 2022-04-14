@@ -10,6 +10,7 @@ module.exports = {
     show,
     edit,
     update,
+    // delete:deleteRestaurant,
   };
   
 
@@ -31,17 +32,23 @@ function create(req, res) {
     console.log('create req body:')
       // ONE WAY
       const restaurant = new Restaurant(req.body);
-      
+      console.log(req.body)
       restaurant.save(function (err) { // mongoose talking 
         //to mongodb and saying put this object in the restaurant collection in the database
         // one way to handle errors
         console.log(err, " this err");
         if (err) return res.redirect("/restaurants/new");
-        console.log(restaurant);
+        // console.log(restaurant);
         // for now, redirect right back to new.ejs
         res.redirect("/restaurants");
       });
 }
+// function deleteRestaurant (req, res){
+//   Restaurant.findByIdAndDelete(req.params.id, function(err){
+//     res.redirect('/restaurants');
+//   })
+// }
+
 function show (req,res){
       Restaurant.findById(req.params.id)
         .populate('courses')
