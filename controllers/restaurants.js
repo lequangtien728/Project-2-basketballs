@@ -10,7 +10,7 @@ module.exports = {
     show,
     edit,
     update,
-    // delete:deleteRestaurant,
+    delete:deleteRestaurant,
   };
   
 
@@ -43,11 +43,11 @@ function create(req, res) {
         res.redirect("/restaurants");
       });
 }
-// function deleteRestaurant (req, res){
-//   Restaurant.findByIdAndDelete(req.params.id, function(err){
-//     res.redirect('/restaurants');
-//   })
-// }
+function deleteRestaurant (req, res){
+  Restaurant.findByIdAndDelete(req.params.id, function(err){
+    res.redirect('/restaurants');
+  })
+}
 
 function show (req,res){
       Restaurant.findById(req.params.id)

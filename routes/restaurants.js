@@ -17,7 +17,7 @@ router.put('/:id', restaurantsCtrl.update);//after edit, you need to update and 
 
 router.post('/', restaurantsCtrl.create);//this need to create when add "Add Restaurant" when created router.get('/new', restaurantsCtrl.new);
 
-// router.delete('/:id', restaurantsCtrl.delete);
+router.delete('/:id', restaurantsCtrl.delete);
 
 
 

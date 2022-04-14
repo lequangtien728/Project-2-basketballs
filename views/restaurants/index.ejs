@@ -19,7 +19,12 @@
                   <td><%= m.openHour %></td>
                   <td><a href="/restaurants/<%= m._id %>">DETAILS</a></td>
                   <td><a href="/restaurants/<%= m._id %>/edit ">EDIT</a></td>
-                  
+                  <td>
+                  <form action="/restaurants/<%= m._id %>?_method=DELETE" method="POST">
+                    <button type="submit">DELETE</button>
+          
+                  </form>
+                </td>
               </tr>
               <% }); %>
   </tbody>
