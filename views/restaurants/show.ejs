@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-
 <section id="show-page">
   <div>Name: <%= restaurantDoc1.restaurantName %></div>
   <br>
@@ -22,16 +21,8 @@
   <% }); %>
 
 </section>
-
-
-
 <br>
 <br>
-<br>
-<br>
-
-
-
 <form id="add-review-form" method="POST" action="/restaurants/<%= restaurantDoc1._id %>/reviews">
   <label>Review:</label>
   <textarea name="content"></textarea>
@@ -76,10 +67,5 @@
           <% }); %>
   </tbody>
 </table>
-
-
-
-  
-     
 
 <%- include('../partials/footer') %>
