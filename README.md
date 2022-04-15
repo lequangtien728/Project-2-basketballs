@@ -1,6 +1,6 @@
 
 **App Title**: **Restaurants**<br>
-Restaurant app contains the restaurants information include the food main courses and review from the customers.
+Restaurant app contains the restaurants information include the main courses and review from the customers.
 
 **Screenshot(s):** <br>
 <img width="1472" alt="Screen Shot 2022-04-14 at 10 20 14 PM" src="https://user-images.githubusercontent.com/100500958/163508802-2263aa1a-d80b-4954-9c4f-92dbc1693e9f.png">
