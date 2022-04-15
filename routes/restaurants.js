@@ -14,7 +14,6 @@ router.get('/:id', restaurantsCtrl.show);//this is the details page(http://local
 router.get('/:id/edit',restaurantsCtrl.edit);
 router.put('/:id', restaurantsCtrl.update);//after edit, you need to update and redirect it back to (restaurants/:id)
 
-
 router.post('/', restaurantsCtrl.create);//this need to create when add "Add Restaurant" when created router.get('/new', restaurantsCtrl.new);
 
 router.delete('/:id', restaurantsCtrl.delete);

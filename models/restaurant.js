@@ -19,7 +19,7 @@ const restaurantSchema = new Schema({
   location: {type: String,},
   openHour: {type: String,},
   reviews: [reviewSchema], //One restaurant has many reviews
-  courses: [{type: Schema.Types.ObjectId, ref: "Course"}]
+  courses: [{type: Schema.Types.ObjectId, ref: "Course"}]//referencing the course document in course models.
 });
 
 

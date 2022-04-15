@@ -30,7 +30,7 @@ function newRestaurant(req, res) {
 
 function create(req, res) {
     console.log('create req body:')
-      // ONE WAY
+      
       const restaurant = new Restaurant(req.body);
       console.log(req.body)
       restaurant.save(function (err) { // mongoose talking 
@@ -51,7 +51,7 @@ function deleteRestaurant (req, res){
 
 function show (req,res){
       Restaurant.findById(req.params.id)
-        .populate('courses')
+        .populate('courses')//populate because courses is embeddid in Restaurant
         .exec(function(err,restaurantDoc1){
         // console.log(restaurant)
           res.render("restaurants/show", {title: "Restaurant Detail", restaurantDoc1: restaurantDoc1,})
@@ -67,7 +67,7 @@ function edit (req,res){
   })
 }
 //update new Restaurant information in database.
-async function update (req,res){
+async function update (req,res){//after edit, need to update 
   // console.log(req.body)
   const updated = await Restaurant.findByIdAndUpdate(req.params.id,req.body,{new:true});
   //add await for the code to completely ran without skip/promise to return.
